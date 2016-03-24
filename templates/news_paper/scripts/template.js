@@ -235,9 +235,9 @@ $(document).ready(function(){
     }
 
     // Survey list footer
-    if($('#surveyListFooter').length>0)
-    {
-        $surveyListFooter = $('#surveyListFooter');
-        $('#outerframeContainer').after($surveyListFooter);
-    }
+    // if($('#surveyListFooter').length>0)
+    // {
+    //     $surveyListFooter = $('#surveyListFooter');
+    //     $('#outerframeContainer').after($surveyListFooter);
+    // }
 });
