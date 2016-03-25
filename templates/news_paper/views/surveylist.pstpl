@@ -25,18 +25,4 @@
     </div>
 </div>
 
-<div id="surveyListFooter" class="well">
-    <div class="container">
-        <p>
-            <a href="http://www.limesurvey.org" target="_blank">
-                <img src="{TEMPLATEURL}poweredby.png" border="0" title="LimeSurvey Survey Software" />
-                </a>
-                <br />
-                <a href="http://www.limesurvey.org" target="_blank">
-                The Online Survey Tool
-                </a>
-                - Free & Open Source
-                <br />
-        </p>
-    </div>
-</div>
+<div style="text-align:center;">Clouddata Survey</div>
