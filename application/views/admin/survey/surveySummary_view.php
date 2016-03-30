@@ -351,7 +351,7 @@ $surveyid = $surveyinfo['sid'];
                             <td  style="border-top: none; padding-left: 2em">
                                 <small><?php echo getLanguageNameFromCode($langname,false).":";?></small>
                             </td>
-                            <td  style="border-top: none;" >
+                            <td  style="border-top: none;" id="absoluteurl" >
                                 <?php $tmp_url = $this->createAbsoluteUrl("/survey/index",array("sid"=>$surveyinfo['sid'],"lang"=>$langname)); ?>
                                 <small><a href='<?php echo $tmp_url?>' target='_blank'><?php echo $tmp_url; ?></a></small>
                             </td>
@@ -365,6 +365,21 @@ $surveyid = $surveyinfo['sid'];
                         </td>
                         <td style="border-top: none">
                             <small><?php echo $endurl;?></small>
+                        </td>
+                    </tr>
+
+		    <!-- QR Code -->
+		    <script type="text/javascript" src="https://raw.githubusercontent.com/lrsjng/jquery-qrcode/master/dist/jquery.qrcode.min.js"></script>
+		    <script type="text/javascript">
+			        $('#qrcode').qrcode("asdfadfdsa");
+
+		    </script>
+                    <tr>
+                        <td   style="border-top: none; padding-left: 2em">
+                            <small><?php echo "QR Code:" ?>:</small>
+                        </td>
+                        <td style="border-top: none">
+                            <small id="qrcode"><?php echo $endurl;?></small>
                         </td>
                     </tr>
 
