@@ -369,17 +369,18 @@ $surveyid = $surveyinfo['sid'];
                     </tr>
 
 		    <!-- QR Code -->
-		    <script type="text/javascript" src="https://raw.githubusercontent.com/lrsjng/jquery-qrcode/master/dist/jquery.qrcode.min.js"></script>
+		    <script type="text/javascript" src="//cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 		    <script type="text/javascript">
-			        $('#qrcode').qrcode("asdfadfdsa");
-
+                function genqrcode(qrurl){
+			        $('#qrcode').qrcode(qrurl);
+                }
 		    </script>
                     <tr>
                         <td   style="border-top: none; padding-left: 2em">
                             <small><?php echo "QR Code:" ?>:</small>
                         </td>
                         <td style="border-top: none">
-                            <small id="qrcode"><?php echo $endurl;?></small>
+                            <small id="qrcode"><?php echo "<script type='text/javascript'>genqrcode("+ $tmp_url +");</script>"; ?></small>
                         </td>
                     </tr>
 
