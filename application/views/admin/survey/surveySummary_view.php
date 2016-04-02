@@ -341,7 +341,7 @@ $surveyid = $surveyinfo['sid'];
                         </td>
                         <td style="border-top: none;" >
                             <?php $tmp_url = $this->createAbsoluteUrl("survey/index",array("sid"=>$surveyinfo['sid'],"lang"=>$surveyinfo['language'])); ?>
-                            <small><a href='<?php echo $tmp_url?>' target='_blank'><?php echo $tmp_url; ?></a></small>
+                            <small><a href='<?php echo $tmp_url?>' target='_blank' id="urllink"><?php echo $tmp_url; ?></a></small>
                         </td>
                     </tr>
 
@@ -368,22 +368,25 @@ $surveyid = $surveyinfo['sid'];
                         </td>
                     </tr>
 
+                    <tr>
+                        <td   style="border-top: none; padding-left: 2em">
+                            <small><?php echo "QR Code:" ?></small>
+                        </td>
+                        <td style="border-top: none">
+                            <small id="qrcode"></small>
+                        </td>
+                    </tr>
+
 		    <!-- QR Code -->
 		    <script type="text/javascript" src="//cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 		    <script type="text/javascript">
                 function genqrcode(qrurl){
 			        $('#qrcode').qrcode(qrurl);
                 }
+                    genqrcode($('#urllink').text());
 		    </script>
-                    <tr>
-                        <td   style="border-top: none; padding-left: 2em">
-                            <small><?php echo "QR Code:" ?>:</small>
-                        </td>
-                        <td style="border-top: none">
-                            <small id="qrcode"><?php echo "<script type='text/javascript'>genqrcode("+ $tmp_url +");</script>"; ?></small>
-                        </td>
-                    </tr>
-
+                    <?php echo "<script type='text/javascript'>$('#qrcode').qrcode("+ $tmp_url +");</script>"; ?>
+		
                     <!-- Survey's texts -->
                     <tr>
                         <td><strong><?php eT("Survey texts");?>:</strong></td>
